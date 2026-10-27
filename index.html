@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hira Khan Portfolio</title>
+<meta name="description" content="Hira Khan, Data and BI Analyst. Power BI, SQL, Python and Bayesian modelling. MSc Data Science and Analytics, University of Leeds.">
+<meta property="og:title" content="Hira Khan, Data &amp; BI Analyst">
+<meta property="og:description" content="Projects in Power BI, SQL, anomaly detection and Bayesian statistics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://hirakhan01.github.io/">
+<meta property="og:image" content="https://hirakhan01.github.io/img/og-case-ledger.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f6a73'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='white' text-anchor='middle'%3EHK%3C/text%3E%3C/svg%3E">
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single left-aligned reading column; hero pairs the thesis with a live change-point plot; work set as rows pairing the story with a screenshot of the real output. */
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --fg: #16232b;
+  --muted: #5a6b75;
+  --rule: #d8e0e4;
+  --accent: #0f6a73;
+  --signal: #c2551c;
+  --accent-soft: #e2f0f1;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f171c; --surface: #152027; --fg: #e4ecef; --muted: #93a6b0;
+    --rule: #263540; --accent: #4fb8c1; --signal: #f08a4b; --accent-soft: #173339;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f171c; --surface: #152027; --fg: #e4ecef; --muted: #93a6b0;
+  --rule: #263540; --accent: #4fb8c1; --signal: #f08a4b; --accent-soft: #173339;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+}
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 64px;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+.eyebrow {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* nav */
+nav {
+  display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+  padding-block: 22px; border-bottom: 1px solid var(--rule);
+}
+nav .mark { font-family: var(--display); font-weight: 700; font-size: 18px; margin-right: auto; color: var(--fg); text-decoration: none; }
+nav a.l { color: var(--muted); text-decoration: none; font-size: 14px; }
+nav a.l:hover { color: var(--fg); }
+
+/* hero */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 40px; align-items: center; padding-block: 56px 40px;
+}
+.hero h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.02; font-weight: 700; letter-spacing: -0.02em; }
+.hero h1 span { color: var(--accent); }
+.hero .lede { font-size: 18px; color: var(--muted); max-width: 46ch; margin: 18px 0 24px; }
+.status {
+  display: inline-flex; gap: 8px; align-items: center;
+  font-family: var(--mono); font-size: 12.5px; color: var(--fg);
+  background: var(--accent-soft); padding: 6px 12px; border-radius: 999px;
+}
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); display: block; }
+.ctas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn {
+  font: 500 14px var(--body); text-decoration: none; padding: 10px 16px; border-radius: 8px;
+  border: 1px solid var(--rule); color: var(--fg); background: var(--surface);
+}
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.btn:hover { border-color: var(--accent); }
+
+figure.plot { margin: 0; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 16px 16px 10px; }
+figure.plot svg { width: 100%; height: auto; display: block; }
+figure.plot figcaption { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+.ax { stroke: var(--rule); }
+.axt { fill: var(--muted); font: 10px var(--mono); }
+.bar { fill: var(--muted); opacity: .38; }
+.rate { stroke: var(--accent); stroke-width: 2.5; fill: none; }
+.tau { stroke: var(--signal); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.post { fill: var(--signal); opacity: .28; }
+.taul { fill: var(--signal); font: 500 12px var(--mono); }
+
+/* sections */
+section { padding-block: 48px; border-top: 1px solid var(--rule); }
+.sh { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; }
+.sh > .eyebrow { padding-top: 8px; }
+section h2 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 14px; }
+.prose p { max-width: 65ch; margin: 0 0 14px; }
+
+/* projects */
+.work { display: grid; }
+.proj {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 20px 32px;
+  align-items: start; padding-block: 30px; border-bottom: 1px solid var(--rule);
+}
+.proj:first-child { padding-top: 6px; }
+.proj h3 { font-size: 22px; font-weight: 700; line-height: 1.2; }
+.proj .kind { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+.proj .hook { font-size: 17px; color: var(--fg); margin: 10px 0 6px; max-width: 58ch; }
+.proj p.detail { margin: 0 0 14px; max-width: 58ch; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tags span { font: 12px var(--mono); color: var(--muted); border: 1px solid var(--rule); padding: 2px 8px; border-radius: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.links a {
+  font: 500 13.5px var(--body); text-decoration: none; padding: 7px 12px; border-radius: 7px;
+  border: 1px solid var(--rule); color: var(--fg); background: var(--surface);
+}
+.links a.go { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.links a:hover { border-color: var(--accent); }
+.shot {
+  display: block; position: relative; aspect-ratio: 16 / 10; max-width: 100%;
+  border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; background: var(--surface);
+  box-shadow: 0 1px 2px rgba(10, 30, 40, .06), 0 10px 28px -14px rgba(10, 30, 40, .28);
+  transition: transform .25s ease;
+}
+a.shot:hover { transform: translateY(-3px); }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top left; display: block; }
+.shot .cap {
+  position: absolute; left: 10px; bottom: 10px; font: 500 11.5px var(--mono);
+  background: var(--fg); color: var(--bg); padding: 4px 8px; border-radius: 5px;
+}
+.shot.empty {
+  display: grid; place-items: center; text-align: center; box-shadow: none;
+  border-style: dashed; color: var(--muted); padding: 16px;
+  background: repeating-linear-gradient(135deg, var(--surface) 0 14px, var(--accent-soft) 14px 15px);
+}
+.shot.empty b { display: block; font: 500 13px var(--mono); color: var(--fg); margin-bottom: 4px; }
+.shot.empty span { font-size: 13px; }
+.award { display: inline-block; font: 500 12px var(--mono); color: var(--signal); margin-bottom: 4px; }
+
+
+/* all-projects grid */
+.more-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; padding-block: 28px 6px; }
+.more-bar p { margin: 0; color: var(--muted); font-size: 14px; }
+.toggle {
+  font: 600 14px var(--body); cursor: pointer; padding: 11px 18px; border-radius: 8px;
+  background: var(--fg); color: var(--bg); border: 1px solid var(--fg);
+  display: inline-flex; gap: 8px; align-items: center;
+}
+.toggle:hover { background: var(--accent); border-color: var(--accent); }
+.toggle .chev { transition: transform .2s ease; display: inline-block; }
+.toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; padding-block: 18px 4px; }
+.filters button {
+  font: 500 12.5px var(--mono); cursor: pointer; padding: 5px 11px; border-radius: 999px;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--muted);
+}
+.filters button[aria-pressed="true"] { background: var(--accent-soft); color: var(--fg); border-color: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: 18px; padding-top: 16px; }
+.card {
+  display: flex; flex-direction: column; background: var(--surface);
+  border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; min-width: 0;
+}
+.card .thumb { aspect-ratio: 16 / 9; max-width: 100%; overflow: hidden; border-bottom: 1px solid var(--rule); background: var(--accent-soft); }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+.card .thumb.type { display: grid; place-items: center; position: relative; }
+.card .thumb.type b { text-align: center; padding-inline: 12px; font: 700 30px var(--display); color: var(--accent); letter-spacing: -0.02em; }
+.card .thumb.type i { position: absolute; left: 10px; bottom: 8px; font: normal 11px var(--mono); color: var(--muted); }
+.card .body { padding: 14px 14px 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.card .kind { font: 11.5px var(--mono); color: var(--accent); }
+.card h4 { margin: 0; font: 700 16.5px/1.25 var(--display); text-wrap: balance; }
+.card p { margin: 0; font-size: 14px; color: var(--muted); }
+.card .go { margin-top: auto; padding-top: 8px; font: 500 13.5px var(--body); }
+.card .go span { color: var(--muted); font-weight: 400; }
+
+/* experience */
+.xp { display: grid; gap: 22px; }
+.role { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 4px 24px; }
+.role .when { font: 13px var(--mono); color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.role h3 { font-size: 18px; font-weight: 600; font-family: var(--body); }
+.role h3 em { font-style: normal; color: var(--muted); font-weight: 400; }
+.role ul { margin: 6px 0 0; padding-left: 18px; max-width: 62ch; }
+.role li { margin-bottom: 4px; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 32px; }
+.skills h3 { font: 600 14px var(--body); margin-bottom: 8px; }
+
+/* contact */
+.contact { display: grid; gap: 10px; max-width: 560px; }
+.crow {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 12px 14px;
+}
+.crow .eyebrow { width: 80px; }
+.crow .v { font: 14px var(--mono); flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.crow button {
+  font: 500 12.5px var(--body); background: none; border: 1px solid var(--rule); color: var(--fg);
+  border-radius: 6px; padding: 5px 10px; cursor: pointer;
+}
+.crow button:hover { border-color: var(--accent); }
+footer { padding-top: 32px; color: var(--muted); font-size: 13px; }
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns: 1fr; padding-block: 36px 28px; gap: 28px; }
+  .sh { grid-template-columns: 1fr; gap: 6px; }
+  .proj { grid-template-columns: 1fr; }
+  .proj .shot { order: -1; }
+  .role { grid-template-columns: 1fr; }
+  .skills { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .shot { transition: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .rate { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw 1.4s .2s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">Hira Khan</a>
+    <a class="l" href="#projects">Projects</a>
+    <a class="l" href="#experience">Experience</a>
+    <a class="l" href="#skills">Skills</a>
+    <a class="l" href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <span class="status"><i></i>Open to BI &amp; Data Analyst roles · Leeds / relocation</span>
+      <h1 style="margin-top:18px">I find the point where <span>the data changed.</span></h1>
+      <p class="lede">Data and BI analyst with an MSc in Data Science and Analytics from the University of Leeds. I build Power BI reporting, statistical models and anomaly detection that people can actually act on.</p>
+      <div class="ctas">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="https://github.com/Hirakhan01" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/hira-khan-ba2178206" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <figure class="plot">
+      <div class="eyebrow" style="margin-bottom:6px">Bayesian change-point · Poisson counts</div>
+      <svg id="cp" viewBox="0 0 480 250" role="img" aria-label="Bar chart of yearly event counts with a step in the rate and the estimated change-point marked as tau"></svg>
+      <figcaption>Illustration on simulated counts: the posterior for τ (orange) pins down where the underlying rate stepped up. My dissertation applied this to ONS homicide data, 1960–2025.</figcaption>
+    </figure>
+  </header>
+
+  <section id="about">
+    <div class="sh">
+      <div class="eyebrow">About</div>
+      <div class="prose">
+        <h2>Analyst first, statistician underneath</h2>
+        <p>After a BTech in Computer Science and Data Science at Presidency University (first-class equivalent), I completed an MSc in Data Science and Analytics at Leeds in September 2026.</p>
+        <p>My working core is BI: Power BI with DAX and Power Query, SQL Server, and dashboards built for stakeholders who need a decision rather than a chart. Underneath that I like rigorous statistics, especially Bayesian methods, and I document negative results as carefully as positive ones.</p>
+        <p>I'm particularly drawn to financial crime, fraud and criminal data analytics, where anomaly detection and clear reporting have direct consequences.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sh">
+      <div class="eyebrow">Projects</div>
+      <div class="work">
+
+        <article class="proj">
+          <div>
+            <div class="kind">Financial crime · end-to-end product</div>
+            <h3>Case Ledger: explainable AML anomaly detection</h3>
+            <p class="hook">Compliance teams drown in false alarms, and the tools that fix this are priced for banks. I built one a small fintech could actually run.</p>
+            <p class="detail">A Bayesian change-point model spots the day a customer's behaviour shifts, then explains it in plain English for the analyst. It caught every injected fraud case in testing (F1 0.93) and was stress-tested against 6.36M PaySim transactions, with the weak spots written up openly.</p>
+            <div class="tags"><span>PyMC</span><span>FastAPI</span><span>Anthropic API</span><span>Python</span></div>
+            <div class="links"><a class="go" href="https://hirakhan01.github.io/Anti-Money-Laundering/" target="_blank" rel="noopener">Open the live dashboard ↗</a><a class="" href="https://github.com/Hirakhan01/Anti-Money-Laundering" target="_blank" rel="noopener">Code</a></div>
+          </div>
+          <a class="shot" href="https://hirakhan01.github.io/Anti-Money-Laundering/" target="_blank" rel="noopener" aria-label="Open Case Ledger: explainable AML anomaly detection"><img src="img/p-1-03f94aca.webp" alt="Case Ledger dashboard showing a flagged customer, the detected change-point at day 45 and an auto-written case narrative" loading="lazy"><span class="cap">Analyst dashboard</span></a>
+        </article>
+        <article class="proj">
+          <div>
+            <div class="kind">Business intelligence · Power BI</div>
+            <h3>Amazon sales performance dashboard</h3>
+            <p class="hook">Which products sell, where, and when? One page answers it, from national totals down to a single shirt.</p>
+            <p class="detail">An interactive Power BI report covering 22.1M in sales across Indian states and cities. Sales trends over time, shipment-status filters, and drill-down product views with reviews, sizes and units sold.</p>
+            <div class="tags"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>Data modelling</span></div>
+            <div class="links"></div>
+          </div>
+          <div class="shot"><img src="img/p-2-ad9f57c5.webp" alt="Power BI dashboard with sales by state and city, a sales-over-time chart, shipment status filters and a product list" loading="lazy"><span class="cap">Power BI report</span></div>
+        </article>
+        <article class="proj">
+          <div>
+            <span class="award">★ Best Technical Implementation, AI Hackathon 2025</span><div class="kind">Healthcare · deep learning</div>
+            <h3>TB detection from chest X-rays</h3>
+            <p class="hook">Upload an X-ray, get a TB risk call in seconds. Built so students and clinicians never need to touch code.</p>
+            <p class="detail">CNN and ResNet models classify chest X-rays with 96% sensitivity, wrapped in an interactive Streamlit platform that also teaches medical imaging, model interpretation and ethical AI.</p>
+            <div class="tags"><span>Python</span><span>CNN / ResNet</span><span>Streamlit</span><span>University of Leeds</span></div>
+            <div class="links"><a class="go" href="https://github.com/Hirakhan01/AI-Hackathon-Project" target="_blank" rel="noopener">See the code and results ↗</a><a href="https://prezi.com/view/og1ktIU8xtbR9Lxf2RiP/" target="_blank" rel="noopener">Presentation</a></div>
+          </div>
+          <a class="shot" href="https://github.com/Hirakhan01/AI-Hackathon-Project" target="_blank" rel="noopener" aria-label="Open the TB detection code"><img src="img/p-3-5d693ba5.webp" alt="Grid of sample chest X-rays labelled Healthy and TB from the training data" loading="lazy"><span class="cap">Model input: healthy vs TB</span></a>
+        </article>
+        <div class="more-bar">
+          <button class="toggle" id="moreBtn" type="button" aria-expanded="false" aria-controls="more">See all 15 projects <span class="chev">▾</span></button>
+          <p>Power BI, SQL, machine learning, NLP and statistics</p>
+        </div>
+        <div id="more" hidden>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button type="button" data-f="all" aria-pressed="true">All</button>
+            <button type="button" data-f="bi" aria-pressed="false">BI &amp; SQL</button>
+            <button type="button" data-f="ml" aria-pressed="false">ML &amp; NLP</button>
+            <button type="button" data-f="stats" aria-pressed="false">Statistics &amp; crime</button>
+          </div>
+          <div class="grid">
+          <article class="card" data-cat="ml"><div class="thumb"><img src="img/p-4-a0043919.webp" alt="Founder Verdicts website hero: What founders on Reddit actually learned" loading="lazy"></div>
+            <div class="body"><div class="kind">NLP · web scraping</div><h4>Founder Verdicts</h4><p>10,000+ r/entrepreneur posts scraped and mined with an NLP pipeline to surface what founders actually learned.</p><a class="go" href="https://hirakhan01.github.io/Entrepreneur-Do-s-Don-t/" target="_blank" rel="noopener">Open the live site ↗</a></div>
+          </article>
+          <article class="card" data-cat="stats"><div class="thumb"><img src="img/p-5-00b36291.webp" alt="England and Wales homicide offences 1960 to 2025 with the 1973/74 change-point marked" loading="lazy" style="object-position:center"></div>
+            <div class="body"><div class="kind">MSc dissertation · Bayesian</div><h4>When did UK homicide rates change?</h4><p>Three methods, 65 years of ONS data, one answer: a structural shift in 1973/74.</p><a class="go" href="https://github.com/Hirakhan01/Dissertation" target="_blank" rel="noopener">Code and figures ↗</a></div>
+          </article>
+          <article class="card" data-cat="bi"><div class="thumb"><img src="img/p-6-5030c2f1.webp" alt="Title slide: Behind the Scenes, Netflix Through Data Analytics" loading="lazy"></div>
+            <div class="body"><div class="kind">Power BI · DAX</div><h4>Netflix through data analytics</h4><p>Revenue, genre, budget and language trends across thousands of titles, with DAX that extracts top-billed cast.</p></div>
+          </article>
+          <article class="card" data-cat="bi"><div class="thumb"><img src="img/p-7-68138d3e.webp" alt="Customer Churn Intelligence Report with churn rate by geography, age and gender" loading="lazy"></div>
+            <div class="body"><div class="kind">Power BI · SQL · Python</div><h4>UK bank churn intelligence report</h4><p>1,000 customers, a 20.4% churn rate and £18.4M of balances at risk, broken down by segment with recommendations.</p><a class="go" href="https://github.com/Hirakhan01/Bank-Churn-Analysis" target="_blank" rel="noopener">Report and code ↗</a></div>
+          </article>
+          <article class="card" data-cat="ml"><div class="thumb type" aria-hidden="true"><b>EDA</b><i>crime trends</i></div>
+            <div class="body"><div class="kind">Python · EDA</div><h4>Indian crime analysis</h4><p>Heatmaps and time series that map crime hotspots and trends to support resource allocation.</p><a class="go" href="https://colab.research.google.com/drive/1VLpK2Lm9-NtgPuLOHX2hmQQ4sGV0eIaa" target="_blank" rel="noopener">Open the notebook ↗</a></div>
+          </article>
+          <article class="card" data-cat="ml"><div class="thumb type" aria-hidden="true"><b>churn</b><i>classification</i></div>
+            <div class="body"><div class="kind">Machine learning</div><h4>Telecom churn prediction</h4><p>Random Forest and Logistic Regression models that flag customers likely to leave.</p><a class="go" href="https://colab.research.google.com/drive/1uKiL4m1dB3rritfsJUKhtduNDLtDTZCi" target="_blank" rel="noopener">Open the notebook ↗</a></div>
+          </article>
+          <article class="card" data-cat="bi"><div class="thumb type" aria-hidden="true"><b>SELECT</b><i>MySQL</i></div>
+            <div class="body"><div class="kind">SQL · MySQL</div><h4>Portuguese bank marketing</h4><p>SQL analysis of who subscribes to term deposits, and which campaign channels actually convert.</p></div>
+          </article>
+          <article class="card" data-cat="bi"><div class="thumb type" aria-hidden="true"><b>Top 15</b><i>bar-chart race</i></div>
+            <div class="body"><div class="kind">Data viz · Flourish</div><h4>Richest politicians race</h4><p>A bar-chart race of the 15 richest politicians, built from multiple cleaned and merged sources at Data Decoded.</p></div>
+          </article>
+          <article class="card" data-cat="stats"><div class="thumb type" aria-hidden="true"><b>ONS</b><i>homicide index</i></div>
+            <div class="body"><div class="kind">Criminal analytics</div><h4>ONS Homicide Index dossier</h4><p>A deployed dossier website and briefing deck, fed by a Python cleaning and analysis pipeline.</p><a class="go" href="https://github.com/Hirakhan01" target="_blank" rel="noopener">GitHub ↗</a></div>
+          </article>
+          <article class="card" data-cat="bi"><div class="thumb type" aria-hidden="true"><b>KPI</b><i>DirectQuery</i></div>
+            <div class="body"><div class="kind">Power BI · SQL Server</div><h4>Live sales dashboard</h4><p>DirectQuery to SQL Server with DAX measures and custom KPI cards, so figures are always current.</p></div>
+          </article>
+          <article class="card" data-cat="stats"><div class="thumb type" aria-hidden="true"><b>39.6 vs 49.4</b><i>avg centipawn loss · Carlsen vs Nakamura</i></div>
+            <div class="body"><div class="kind">Sports analytics</div><h4>Carlsen vs Nakamura, move by move</h4><p>2,959 moves scored by Stockfish. The "time pressure causes blunders" signal turned out to be a measurement artefact.</p><a class="go" href="https://github.com/Hirakhan01/Chess-Engine-Analysis" target="_blank" rel="noopener">Code and findings ↗</a></div>
+          </article>
+          <article class="card" data-cat="ml"><div class="thumb type" aria-hidden="true"><b>API</b><i>FastAPI</i></div>
+            <div class="body"><div class="kind">Backend · FastAPI</div><h4>ML prediction API</h4><p>A model served over FastAPI with SQLModel storage, API key auth and pytest coverage.</p><a class="go" href="https://github.com/Hirakhan01" target="_blank" rel="noopener">GitHub ↗</a></div>
+          </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sh">
+      <div class="eyebrow">Experience</div>
+      <div class="xp">
+        <div class="role">
+          <div class="when">Jul–Sep 2026</div>
+          <div>
+            <h3>Student Consultant <em>· Water Offsets Ltd</em></h3>
+            <ul><li>MSc work placement as part of a student consulting team.</li></ul>
+          </div>
+        </div>
+        <div class="role">
+          <div class="when">Jan–Feb 2025</div>
+          <div>
+            <h3>Data Analyst (freelance) <em>· Data Decoded, Bengaluru</em></h3>
+            <ul>
+              <li>Automated Excel dashboards tracking 10+ KPIs for 4 senior stakeholders, cutting decision-making cycle time by 25%.</li>
+              <li>Cleaned and validated 8,000+ financial records across 3 sources, reducing downstream reporting errors by 30%.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="role">
+          <div class="when">Nov–Dec 2024</div>
+          <div>
+            <h3>BI Analyst (freelance) <em>· Loomos, Bengaluru</em></h3>
+            <ul>
+              <li>Built a unified Power BI KPI framework across multi-source datasets.</li>
+              <li>Analysed behavioural data from 500,000+ users to surface retention and drop-off patterns across two business units.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="role">
+          <div class="when">Volunteer</div>
+          <div>
+            <h3>Data Strategy Consultant <em>· ADRC via Catchafire</em></h3>
+            <ul><li>Delivered a data strategy consultation for a civil rights nonprofit, rated as impactful.</li></ul>
+          </div>
+        </div>
+        <div class="role">
+          <div class="when">Certificates</div>
+          <div>
+            <h3>Virtual experience programmes <em>· Forage</em></h3>
+            <ul><li>PwC Power BI Virtual Experience · KPMG Data Analytics Virtual Experience</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sh">
+      <div class="eyebrow">Skills &amp; education</div>
+      <div>
+        <div class="skills">
+          <div><h3>BI &amp; reporting</h3><div class="tags"><span>Power BI</span><span>DAX</span><span>Power Query</span><span>DirectQuery</span><span>Tableau</span><span>Excel</span></div></div>
+          <div><h3>Data &amp; databases</h3><div class="tags"><span>SQL Server</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>ClickHouse</span></div></div>
+          <div><h3>Analysis &amp; modelling</h3><div class="tags"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span><span>PyMC</span><span>Bayesian inference</span></div></div>
+          <div><h3>Engineering &amp; cloud</h3><div class="tags"><span>FastAPI</span><span>Streamlit</span><span>Git</span><span>Azure fundamentals</span></div></div>
+          <div>
+            <h3>MSc Data Science and Analytics</h3>
+            <p style="margin:0;color:var(--muted)">University of Leeds · completed Sep 2026</p>
+          </div>
+          <div>
+            <h3>BTech Computer Science and Data Science</h3>
+            <p style="margin:0;color:var(--muted)">Presidency University · UK first-class equivalent</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sh">
+      <div class="eyebrow">Contact</div>
+      <div>
+        <h2>Let's talk about your data</h2>
+        <p style="color:var(--muted);max-width:55ch;margin:0 0 18px">Based in Leeds and open to relocation, including hybrid roles in Bristol.</p>
+        <div class="contact">
+          <div class="crow"><span class="eyebrow">Email</span><span class="v" id="c-email">hira27khan@gmail.com</span><button type="button" data-copy="c-email">Copy</button></div>
+          <div class="crow"><span class="eyebrow">LinkedIn</span><a class="v" href="https://linkedin.com/in/hira-khan-ba2178206" target="_blank" rel="noopener">linkedin.com/in/hira-khan-ba2178206</a></div>
+          <div class="crow"><span class="eyebrow">GitHub</span><a class="v" href="https://github.com/Hirakhan01" target="_blank" rel="noopener">github.com/Hirakhan01</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Hira Khan</footer>
+</div>
+
+<script>
+(function () {
+  // Deterministic simulated Poisson counts with a rate step at year index 22.
+  var seed = 7;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function pois(l) { var L = Math.exp(-l), k = 0, p = 1; do { k++; p *= rnd(); } while (p > L); return k - 1; }
+  var n = 40, tau = 22, l1 = 6, l2 = 13, d = [];
+  for (var i = 0; i < n; i++) d.push(pois(i < tau ? l1 : l2));
+
+  // Exact posterior over tau with flat prior, rates at their segment MLEs (profile likelihood).
+  function ll(t) {
+    var a = d.slice(0, t), b = d.slice(t);
+    function seg(s) { var m = s.reduce(function (x, y) { return x + y; }, 0) / s.length || 1e-9; return s.reduce(function (acc, k) { return acc + k * Math.log(m) - m; }, 0); }
+    return seg(a) + seg(b);
+  }
+  var lls = [], mx = -Infinity;
+  for (var t = 2; t < n - 2; t++) { var v = ll(t); lls.push([t, v]); if (v > mx) mx = v; }
+  var tot = 0; lls.forEach(function (p) { p[2] = Math.exp(p[1] - mx); tot += p[2]; });
+  var best = lls.reduce(function (a, b) { return b[2] > a[2] ? b : a; });
+  var m1 = d.slice(0, best[0]).reduce(function (a, b) { return a + b; }, 0) / best[0];
+  var m2 = d.slice(best[0]).reduce(function (a, b) { return a + b; }, 0) / (n - best[0]);
+
+  var W = 480, H = 250, L = 34, R = 10, T = 22, B = 30;
+  var yMax = 25, pw = (W - L - R) / n;
+  function x(i) { return L + i * pw; }
+  function y(v) { return T + (H - T - B) * (1 - v / yMax); }
+  var s = '';
+  [0, 5, 10, 15, 20, 25].forEach(function (v) {
+    s += '<line class="ax" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '"/>';
+    s += '<text class="axt" x="' + (L - 6) + '" y="' + (y(v) + 3) + '" text-anchor="end">' + v + '</text>';
+  });
+  d.forEach(function (v, i) {
+    s += '<rect class="bar" x="' + (x(i) + 1) + '" y="' + y(Math.min(v, yMax)) + '" width="' + (pw - 2) + '" height="' + (y(0) - y(Math.min(v, yMax))) + '"/>';
+  });
+  // posterior mass for tau, scaled into the band under the top
+  var pmax = Math.max.apply(null, lls.map(function (p) { return p[2] / tot; }));
+  lls.forEach(function (p) {
+    var h = (p[2] / tot) / pmax * 34;
+    if (h > 0.4) s += '<rect class="post" x="' + (x(p[0]) - pw / 2 + 1) + '" y="' + (y(0) - h) + '" width="' + (pw - 2) + '" height="' + h + '"/>';
+  });
+  var bx = x(best[0]);
+  s += '<path class="rate" d="M' + L + ' ' + y(m1) + ' H' + bx + ' V' + y(m2) + ' H' + (W - R) + '"/>';
+  s += '<line class="tau" x1="' + bx + '" x2="' + bx + '" y1="' + (T - 6) + '" y2="' + y(0) + '"/>';
+  s += '<text class="taul" x="' + (bx + 6) + '" y="' + (T + 4) + '">τ̂ = t' + best[0] + '</text>';
+  s += '<text class="axt" x="' + (L + 4) + '" y="' + (y(m1) - 6) + '">λ₁ ≈ ' + m1.toFixed(1) + '</text>';
+  s += '<text class="axt" x="' + (W - R - 4) + '" y="' + (y(m2) - 6) + '" text-anchor="end">λ₂ ≈ ' + m2.toFixed(1) + '</text>';
+  [0, 10, 20, 30, 39].forEach(function (i) {
+    s += '<text class="axt" x="' + (x(i) + pw / 2) + '" y="' + (H - B + 16) + '" text-anchor="middle">t' + i + '</text>';
+  });
+  s += '<line class="ax" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0) + '" y2="' + y(0) + '" style="stroke:var(--muted)"/>';
+  document.getElementById('cp').innerHTML = s;
+
+
+  var mb = document.getElementById('moreBtn'), more = document.getElementById('more');
+  function setMore(open) {
+    more.hidden = !open; mb.setAttribute('aria-expanded', open);
+    mb.firstChild.nodeValue = open ? 'Show fewer projects ' : 'See all 15 projects ';
+  }
+  mb.addEventListener('click', function () { setMore(more.hidden); });
+  if (location.hash === '#all-projects') setMore(true);
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      document.querySelectorAll('.filters button').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      document.querySelectorAll('.card').forEach(function (c) { c.hidden = f !== 'all' && c.getAttribute('data-cat') !== f; });
+    });
+  });
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var el = document.getElementById(b.getAttribute('data-copy'));
+      var txt = el.textContent.trim();
+      function sel() { var r = document.createRange(); r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected'; }
+      try {
+        navigator.clipboard.writeText(txt).then(function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1600); }, sel);
+      } catch (e) { sel(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
